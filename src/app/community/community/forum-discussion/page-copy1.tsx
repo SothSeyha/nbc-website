@@ -5,33 +5,28 @@ import Header from "@/src/components/Header";
 import { FormEvent, useState } from "react";
 
 export default function ForumDiscussion() {
-  const arrPosts: any = [
+  const arrPosts = [
     {
       id: 1,
-      postId: 1,
       author: "Devit Huotkeo",
       title: "Ooooh, they added scheduled conversion?",
       body: "Even a few weeks ago I could only make limit/stop orders to convert currencies. Apparently they now added the ability to set a specific date instead? That'll make small online subscriptions convenient!With all the CS issues, I think a good news is refreshing from time to time.",
-      upvotes: 0,
-      comments: 0,
+      upvotes: 3,
+      comments: 4,
     },
   ];
-  const arrReplyPosts: any = [];
   const [posts, setPost] = useState(arrPosts);
-  const [replyPosts, setReplyPost] = useState(arrReplyPosts);
-  const [openReplyBox, setOpenReplyBox] = useState<number | null>(null);
 
   async function addCmt(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const discussion = formData.get("discussion") as string;
     console.log(discussion);
-    if (!discussion) return;
     if (discussion.trim()) {
-      setPost((prev: any) => [
+      setPost((prev) => [
         ...prev,
         {
-          id: prev.length + 1,
+          id: 1,
           author: "Seyha",
           title: "No ui to get title",
           body: discussion,
@@ -48,36 +43,10 @@ export default function ForumDiscussion() {
     }
   }
 
-  async function replyPost(e: FormEvent<HTMLFormElement>, postId:any, countCmt:any) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const replyPost = formData.get("replyPost") as string;
-    console.log(replyPost);
-    if (!replyPost) return;
-    if (replyPost.trim()) {
-      setReplyPost((prev: any) => [
-        ...prev,
-        {
-          id: prev.length + 1,
-          postId: postId,
-          author: "Seyha",
-          body: replyPost,
-          upvotes: 0,
-          comments: 0,
-        },
-      ]);
-    }
-
-    const textArea = e.currentTarget.querySelector("textarea");
-    if (textArea) {
-      textArea.value = "";
-      textArea.style.height = "47px";
-    }
-  }
   return (
     <section>
       {/* <AnnouncementBar /> */}
-      <div className="w-full h-screen pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden overflow-y-auto">
+      <div className="w-full h-screen pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden">
         {/* <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" /> */}
         {/* container */}
         <div className="lg:w-[70%] px-[80px] m-auto pt-[30px] font-sora">
@@ -119,7 +88,7 @@ export default function ForumDiscussion() {
                 />
               </div>
             </form>
-            {posts.map((item: any, index: any) => (
+            {posts.map((item, index) => (
               <div key={index}>
                 <div className="pt-[50px] w-full">
                   <p className="text-[16px] text-[#300304] font-bold leading-[150%] tracking-[-0.02em]">
@@ -148,15 +117,7 @@ export default function ForumDiscussion() {
                       alt=""
                     />
                   </div>
-                  <div
-                    className="flex gap-[6px] px-[9px] h-[32px] bg-[#3104050D] rounded-[32px] items-center justify-center mt-[10px]"
-                    onClick={() => {
-                      console.log(item.id, "postId");
-                      setOpenReplyBox(
-                        openReplyBox === item.id ? null : item.id,
-                      );
-                    }}
-                  >
+                  <div className="flex gap-[6px] px-[9px] h-[32px] bg-[#3104050D] rounded-[32px] items-center justify-center mt-[10px]">
                     <img
                       src="/img/forum/chat.svg"
                       className="max-w-[20px] h-[20px]"
@@ -165,67 +126,9 @@ export default function ForumDiscussion() {
                     <label className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em]">
                       {item.comments}
                     </label>
+                    
                   </div>
                 </div>
-                {/* reply post box */}
-                {openReplyBox === item.id && (
-                  <div className="pt-[20px]">
-                    <p className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em]">
-                      Comments
-                    </p>
-                    <form
-                      action=""
-                      onSubmit={(e) => replyPost(e, item.id, replyPosts.length)}
-                      className="pt-[15px] pl-[30px]"
-                    >
-                      <div className="w-full bg-[#3104050D] flex gap-[20px] items-center pl-[20px]">
-                        <img
-                          src="/img/forum/chat.svg"
-                          className="max-w-[24px] max-h-[24px]"
-                          alt=""
-                        />
-                        <textarea
-                          placeholder="Add a discussion"
-                          name="replyPost"
-                          id=""
-                          rows={1}
-                          className="w-full focus:outline-none font-sora text-left font-normal text-[16px] text-[#3104054D] leading-[150%] tracking-[-0.02em] resize-none overflow-hidden"
-                          style={{
-                            padding: "13px 15px 13px 0",
-                            height: "47px",
-                          }}
-                          onInput={(e) => {
-                            const el = e.currentTarget;
-                            el.style.height = "47px";
-                            el.style.height = el.scrollHeight + "px";
-                            el.style.color = "#300304";
-                          }}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter") {
-                              e.preventDefault();
-                              e.currentTarget.form?.requestSubmit();
-                            }
-                          }}
-                        />
-                      </div>
-                    </form>
-                      {(() => {
-                        const filteredReplies = replyPosts.filter((reply:any) => reply.postId === index+1);
-                        return filteredReplies.map((reply:any, i:any) => (
-                          <div key={i}>
-                          <div className="pt-[20px] w-full pl-[30px]">
-                            <p className="text-[16px] text-[#300304] font-bold leading-[150%] tracking-[-0.02em]">
-                              {reply.author}
-                            </p>
-                            <p className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em] pt-[8px] break-words">
-                              {reply.body}
-                            </p>
-                          </div>
-                        </div>
-                        ));
-                      })()}
-                  </div>
-                )}
               </div>
             ))}
           </div>

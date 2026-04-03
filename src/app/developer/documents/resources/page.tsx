@@ -10,9 +10,9 @@ export default function Resource() {
   // const navLists = ["KHQR", "CIFPT"];
   return (
     <section>
-      <AnnouncementBar />
-      <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover">
-        <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
+      {/* <AnnouncementBar /> */}
+      <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden">
+        {/* <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" /> */}
         {/* container */}
         <div className="pl-[80px] pr-[80px] pt-[30px] font-sora">
           {/* header guideline */}
@@ -24,7 +24,7 @@ export default function Resource() {
             technical <br /> integration
           </p>
           <section className="flex mt-[50px]">
-            <nav className="w-[20%]">
+            <nav className="lg:block lg:w-[20%] hidden">
               <ul className="font-sora font-normal text-[16px] tracking-[-0.02em] leading-[150%] [&_li]:py-3 w-[80%]">
                 {["KHQR", "CIFPT"].map((item, index) => (
                   <a
@@ -41,12 +41,12 @@ export default function Resource() {
                 ))}
               </ul>
             </nav>
-            <article className="w-[60%]">
+            <article className="lg:w-[60%] w-full">
               <div>
                 <p className="font-sora font-semibold text-[28px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[5px]">
                   KHQR Logo
                 </p>
-                <div className="h-[50px] w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -65,7 +65,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="h-[50px] w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -84,7 +84,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="h-[50px] w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -108,7 +108,7 @@ export default function Resource() {
                 <p className="font-sora font-semibold text-[28px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[5px] pb-[15px]">
                   KHQR Guideline
                 </p>
-                <div className="h-[50px] w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -127,7 +127,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="h-[50px] w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -146,7 +146,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="h-[50px] w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -167,7 +167,7 @@ export default function Resource() {
                 </div>
               </div>
             </article>
-            <nav className="w-[20%]">
+            <nav className="lg:w-[20%] lg:block hidden">
               <p className="font-sora font-semibold text-[28px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[5px]">
                 In this articles
               </p>

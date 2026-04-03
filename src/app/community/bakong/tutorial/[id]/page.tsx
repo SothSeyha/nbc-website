@@ -67,7 +67,7 @@ export default function BlogDetail() {
           <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] pt-[30px]">
             {[1, 2, 3].map((item, index) => (
               <Link key={index} href="/community/bakong/blog/1">
-                <div className="flex flex-col">
+                <div className="pb-[30px] flex flex-col">
                   <img
                     src={`/img/community/blog${index + 5}.svg`}
                     className="w-max-[440px] h-[280px] object-cover"

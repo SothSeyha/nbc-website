@@ -9,11 +9,11 @@ export default function KhqrGuideline() {
   const navLists = ["Change Logs", "Introduction"];
   return (
     <section>
-      <AnnouncementBar />
-      <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover">
-        <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
+      {/* <AnnouncementBar /> */}
+      <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden">
+        {/* <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" /> */}
         {/* container */}
-        <div className="pl-[80px] pr-[80px] pt-[30px] font-sora">
+        <div className="px-[80px] pt-[30px] font-sora">
           {/* header guideline */}
           <p id="ChangeLogs" className="font-sora uppercase text-center font-semibold text-[33px] text-[#300304] leading-[120%] tracking-[-0.02em]">
             KHQR guideline
@@ -23,7 +23,7 @@ export default function KhqrGuideline() {
             technical <br /> integration
           </p>
           <section className="flex mt-[55px]">
-            <nav className="w-[30%]">
+            <nav className="hidden lg:block lg:w-[30%]">
               <ul className="font-sora font-normal text-[16px] tracking-[-0.02em] leading-[150%] [&_li]:py-3 w-[80%] sticky top-20">
                 {navLists.map((item, index) => (
                   <li
@@ -49,12 +49,12 @@ export default function KhqrGuideline() {
                 ))}
               </ul>
             </nav>
-            <article className="w[-70%]">
-              <div>
+            <article className="w-full lg:w-[70%]">
+              <div className="w-full overflow-x-auto">
                 <p className="font-sora font-semibold text-[28px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[5px]">
                   Change Logs
                 </p>
-                <table>
+                <table className="min-w-[500px] w-full">
                   <thead className="bg-[#300304] text-white text-left [&_th]:pl-[15px] [&_th]:py-3">
                     <tr>
                       <th className="w-[25%]">Version</th>
@@ -109,7 +109,7 @@ export default function KhqrGuideline() {
                   response sample.
                 </p>
               </div>
-              <div>
+              <div className="w-full overflow-x-auto">
                 <p className="font-sora font-semibold text-[20px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[15px]">
                   Overall APIs
                 </p>
