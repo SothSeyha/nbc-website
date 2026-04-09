@@ -5,10 +5,10 @@ export default function Transfer() {
   return (
     <section>
       <AnnouncementBar />
-      <div className="w-full pb-[50px] bg-[#f8f8f6] bg-cover">
+      <div className="w-full max-h-screen pb-[300px] bg-[#f8f8f6] bg-cover flex flex-col overflow-hidden">
         <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
         {/* container */}
-        <div className="pl-[80px] pr-[80px] pt-[20px] font-sora flex">
+        <div className="w-full px-[80px] pt-[20px] font-sora flex bg-red-600">
           <div className="pt-[70px] bg-red w-[50%] pt-[140px]">
             <p className="uppercase font-semibold text-[20px] mb-[25px]">
               Transfer

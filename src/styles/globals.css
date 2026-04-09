@@ -27,6 +27,55 @@ h1, h2, h3, p, span, label,div {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* custom font size */
+  --text-display: 4.5rem;      /* 72px */
+  --text-heading-1: 3rem;      /* 48px */
+  --text-heading-2: 1.25rem;   /* 20px */
+  --text-heading-3: 1.125rem;  /* 18px */
+  --text-body-large: 1rem;     /* 16px */
+  --text-body: 0.9375rem;      /* 15px */
+  --text-body-medium: 0.9375rem; /* 15px */
+  --text-body-bold: 0.9375rem;   /* 15px */
+  --text-button: 1rem;         /* 16px */
+  --text-caption: 0.75rem;     /* 12px */
+  --text-caption-medium: 0.75rem; /* 12px */
+  --text-caption-small: 0.6875rem; /* 11px */
+
+  /* custom font weight */
+  --font-weight-regular: 400;  
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* letter spacing */
+  --tracking-none: 0em;
+  --tracking-extra-small: 0.02em;
+  --tracking-small: 0.04em;
+  --tracking-base-default: 0.08em;
+  --tracking-medium-small: 0.12em;
+  --tracking-standard: 0.16em;
+  --tracking-large: 0.24em;
+  --tracking-extra-large: 0.32em;
+  --tracking-double-large: 0.48em;
+  --tracking-ultra-large: 0.64em;
+
+  /* Default mode */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-md-plus: 12px;
+  --radius-lg: 16px;
+  --radius-lg-plus: 24px;
+  --radius-xl: 32px;
+  --radius-2xl: 128px;
+  --radius-3xl: 360px;
+}
+
+/* Crishmash mode — only override what's different */
+[data-theme="crishmash"] {
+  --radius-md-plus: 0px;
 }
 
 @media (prefers-color-scheme: dark) {

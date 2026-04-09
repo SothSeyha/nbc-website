@@ -25,17 +25,16 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
       }} // close dropdown when leaving header + dropdown
     >
       {/* HEADER */}
-      <div className="relative z-20 flex pl-[80px] pr-[80px] pt-[25px] pb-[20px]">
-        <div className="w-[40%]">
+      <div className="relative z-20 flex w-full px-[80px] pt-[25px] pb-[20px]">
+        <div className="w-[20%]">
           <Link href={"/"}>
             <img src={logo} alt="Bakong" />
           </Link>
         </div>
-
-        <div className="w-[60%] flex">
+        <div className="w-[60%] flex flex-col items-center justify-center">
           {/* <ul className="flex items-center gap-[18px] text-[#F8F8F7] text-[16px] font-sora"> */}
           <ul
-            className={`flex items-center gap-[18px] ${colorText} text-[16px] font-sora}`}
+            className={`flex items-center gap-[18px] ${colorText} text-body-large font-regular font-sora tracking-extra-small}`}
           >
             {/* DISCOVER */}
             <li
@@ -92,6 +91,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
             </li>
           </ul>
         </div>
+        <div className="w-[20%]"></div>
       </div>
       {/* DROPDOWN */}
       {activeMenu === "discover" && (
