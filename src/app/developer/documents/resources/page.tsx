@@ -1,5 +1,4 @@
 "use client";
-
 import AnnouncementBar from "@/src/components/AnnouncementBar";
 import Header from "@/src/components/Header";
 import { useState } from "react";
@@ -10,22 +9,22 @@ export default function Resource() {
   // const navLists = ["KHQR", "CIFPT"];
   return (
     <section>
-      {/* <AnnouncementBar /> */}
+      <AnnouncementBar />
       <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden">
-        {/* <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" /> */}
+        <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
         {/* container */}
-        <div className="pl-[80px] pr-[80px] pt-[30px] font-sora">
+        <div className="px-[80px] pt-[30px] font-sora">
           {/* header guideline */}
-          <p id="KHQRLogo" className="font-sora uppercase text-center font-semibold text-[33px] text-[#300304] leading-[120%] tracking-[-0.02em]">
+          <p id="KHQRLogo" className="font-sora uppercase text-center font-semibold text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
             Downloadable assets
           </p>
-          <p className="font-sora uppercase text-center font-normal text-[14px] text-[#300304] leading-[150%] tracking-[-0.02em] pt-[15px]">
+          <p className="font-sora uppercase text-center font-regular text-body text-[#300304] leading-[150%] tracking-extra-small pt-[15px]">
             Down below is a documents for KHQR integration both design and
             technical <br /> integration
           </p>
-          <section className="flex mt-[50px]">
+          <section className="w-full flex mt-[50px] gap-[60px]">
             <nav className="lg:block lg:w-[20%] hidden">
-              <ul className="font-sora font-normal text-[16px] tracking-[-0.02em] leading-[150%] [&_li]:py-3 w-[80%]">
+              <ul className="w-[100%] font-sora font-regular text-body-large tracking-extra-small leading-[150%] [&_li]:py-3">
                 {["KHQR", "CIFPT"].map((item, index) => (
                   <a
                     href={`#${item.replace(/\s+/g, "")}`}
@@ -43,10 +42,10 @@ export default function Resource() {
             </nav>
             <article className="lg:w-[60%] w-full">
               <div>
-                <p className="font-sora font-semibold text-[28px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[5px]">
+                <p className="font-sora font-semibold text-[28px] tracking-extra-small leading-[150%] text-[#300304] mb-[5px]">
                   KHQR Logo
                 </p>
-                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="py-[15px] lg:w-[100%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -65,7 +64,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="py-[15px] lg:w-[100%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -84,7 +83,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="py-[15px] lg:w-[100%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -108,7 +107,7 @@ export default function Resource() {
                 <p className="font-sora font-semibold text-[28px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[5px] pb-[15px]">
                   KHQR Guideline
                 </p>
-                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="py-[15px] lg:w-[100%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -127,7 +126,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="py-[15px] lg:w-[100%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -146,7 +145,7 @@ export default function Resource() {
                     />
                   </a>
                 </div>
-                <div className="w-full h-[50px] lg:w-[93%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
+                <div className="py-[15px] lg:w-[100%] bg-[#3104050D] flex items-center justify-between px-[20px] mt-[10px] mb-[10px]">
                   <div className="flex gap-[20px]">
                     <img
                       src="/img/resource/file_outline.svg"
@@ -168,10 +167,10 @@ export default function Resource() {
               </div>
             </article>
             <nav className="lg:w-[20%] lg:block hidden">
-              <p className="font-sora font-semibold text-[28px] tracking-[-0.02em] leading-[150%] text-[#300304] mb-[5px]">
+              <p className="font-sora font-semibold text-[24px] tracking-extra-small leading-[150%] text-[#300304] mb-[5px]">
                 In this articles
               </p>
-              <ul className="font-sora font-normal text-[16px] tracking-[-0.02em] leading-[150%] [&_li]:py-3 w-[80%] sticky top-20">
+              <ul className="w-[100%] font-sora font-regular text-body-large tracking-extra-small leading-[150%] [&_li]:py-3 w-[80%] sticky top-20">
                 {["KHQR Logo", "KHQR Guideline"].map((item, index) => (
                   <li
                     key={index}

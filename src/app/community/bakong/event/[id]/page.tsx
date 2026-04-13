@@ -1,16 +1,33 @@
 "use client";
 
-import AnnouncementBar from "@/src/components/AnnouncementBar";
-import Header from "@/src/components/Header";
-import Link from "next/link";
-import { useState } from "react";
+import BlogCardDetail from "@/src/components/BlogCardDetail";
 
-export default function BlogDetail() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const navLists = ["Change Logs", "Introduction"];
-  const blog = {
-    title: "Donation or Deception?",
-    content: `<p>The growth of social media and crowdfunding sites has given us a number of options when it comes to donating to charitable causes all over the world — it's easier than ever to support those who need it most.</p>
+const blog = {
+  img: "/img/community/blog8.svg",
+  relatedBlog: [
+    {
+      img: "/img/community/blog2.svg",
+      title: "Security",
+      desc: "Lessons and insights from 8 years of Pixelgrade",
+      date: "27 March 2025",
+    },
+    {
+      img: "/img/community/blog3.svg",
+      title: "Security",
+      desc: "Lessons and insights from 8 years of Pixelgrade",
+      date: "28 March 2025",
+    },
+    {
+      img: "/img/community/blog4.svg",
+      title: "Security",
+      desc: "Lessons and insights from 8 years of Pixelgrade",
+      date: "29 March 2025",
+    },
+  ],
+  title: "Donation or Deception?",
+  description: "Donation or deception? The truth behind charity scams.",
+  date: "27 March 2025",
+  content: `<p>The growth of social media and crowdfunding sites has given us a number of options when it comes to donating to charitable causes all over the world — it's easier than ever to support those who need it most.</p>
 
 <p>But this new landscape continues to be infiltrated by scammers who prey on people's goodwill, and their exploitative tactics are constantly evolving.</p>
 
@@ -32,64 +49,17 @@ export default function BlogDetail() {
 </ul>
 
 <p>Online crowdfunding platforms are a double-edged sword — scammers exploit kindhearted people in the hope they won't notice the warning signs.</p>`,
-  };
+};
+export default function BlogDetail() {
   return (
     <section>
-      {/* <AnnouncementBar /> */}
-      <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover">
-        {/* <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" /> */}
-        {/* container */}
-        <div className="pt-[30px] px-[80px] font-sora max-w-4xl mx-auto">
-          <img src="/img/blog/detail/image1.png" alt="" />
-          <p className="font-sora font-bold text-[16px] text-[#300304] leading-[150%] tracking-[-0.02em] pt-[20px]">
-            Security
-          </p>
-          <p className="font-sora uppercase font-semibold text-[46px] text-[#300304] leading-[150%] tracking-[-0.02em] pt-[10px]">
-            Donation or deception? The truth behind charity scams.
-          </p>
-          <p className="font-sora font-normal text-[16px] text-[#300304] leading-[150%] tracking-[-0.02em] pt-[10px]">
-            27 March 2025
-          </p>
-
-          <div
-            className="pt-[30px] prose
-            prose-p:font-sora prose-p:text-[16px] prose-p:text-[#300304] 
-            prose-li:font-sora prose-li:text-[16px] prose-li:text-[#300304] prose-ul:marker:text-[#300304]
-            prose-h2:font-bold prose-h2:text-[22px] prose-h2:text-[#300304]"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          />
-        </div>
-
-        <h2 className="pt-[30px] px-[80px] font-sora max-w-4xl mx-auto pt-[15px] text-[22px] font-bold">
-          Related Blogs
-        </h2>
-        <div className="pr-[80px] pl-[80px]">
-          <div className="gap-[30px] pt-[30px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((item, index) => (
-              <Link key={index} href="/community/bakong/blog/1">
-                <div className="max-w-[440px] pb-[30px] flex flex-col">
-                  <img
-                    src={`/img/community/blog${index + 1}.svg`}
-                    className="max-w-[420px] h-[280px] object-cover"
-                    alt=""
-                  />
-                  <div className="flex flex-col gap-[15px]">
-                    <p className="text-[16px] text-[#300304] font-bold leading-[150%] tracking-[-0.02em] pt-[15px]">
-                      Security
-                    </p>
-                    <p className="text-[22px] h-[72px] text-[#300304] font-bold leading-[150%] tracking-[-0.02em] overflow-hidden">
-                      Lessons and insights from 8 years of Pixelgrade
-                    </p>
-                    <p className="mt-auto text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em]">
-                      27 March 2025
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      <BlogCardDetail
+        img={blog.img}
+        title={blog.title}
+        description={blog.description}
+        date={blog.date}
+        bodyText={blog.content} 
+        relatedBlog={blog.relatedBlog}      />
     </section>
   );
 }

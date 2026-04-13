@@ -1,6 +1,5 @@
 export default function AnnouncementBar() {
   return (
-    <nav>
       <div className="announcementBar w-full py-[10px] bg-[#310405] flex flex-col items-center justify-center">
         <label
           htmlFor=""
@@ -11,6 +10,5 @@ export default function AnnouncementBar() {
           more .
         </label>
       </div>
-    </nav>
   );
 }

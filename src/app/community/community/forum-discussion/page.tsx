@@ -76,16 +76,16 @@ export default function ForumDiscussion() {
   }
   return (
     <section>
-      {/* <AnnouncementBar /> */}
+      <AnnouncementBar />
       <div className="w-full h-screen pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden overflow-y-auto">
-        {/* <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" /> */}
+        <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
         {/* container */}
         <div className="lg:w-[70%] px-[80px] m-auto pt-[30px] font-sora">
           {/* header */}
-          <p className="font-sora uppercase text-center font-semibold text-[33px] text-[#300304] leading-[120%] tracking-[-0.02em]">
+          <p className="font-sora uppercase text-center font-semibold text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
             Forum & discussion
           </p>
-          <p className="font-sora text-center font-normal text-[16px] text-[#300304] leading-[150%] tracking-[-0.02em] pt-[15px]">
+          <p className="font-sora text-center font-regular text-body-large text-[#300304] leading-[150%] tracking-extra-small pt-[15px]">
             A forum for Bakong users, asking and get supports from each other.
             It is a <br /> community where people can share stuff.
           </p>
@@ -102,7 +102,7 @@ export default function ForumDiscussion() {
                   name="discussion"
                   id=""
                   rows={1}
-                  className="w-full focus:outline-none font-sora text-left font-normal text-[16px] text-[#3104054D] leading-[150%] tracking-[-0.02em] resize-none overflow-hidden"
+                  className="w-full focus:outline-none font-sora text-left font-regular text-body-large text-[#3104054D] leading-[150%] tracking-extra-small resize-none overflow-hidden"
                   style={{ padding: "13px 15px 13px 0", height: "47px" }}
                   onInput={(e) => {
                     const el = e.currentTarget;
@@ -122,13 +122,13 @@ export default function ForumDiscussion() {
             {posts.map((item: any, index: any) => (
               <div key={index}>
                 <div className="pt-[50px] w-full">
-                  <p className="text-[16px] text-[#300304] font-bold leading-[150%] tracking-[-0.02em]">
+                  <p className="text-body-large text-[#300304] font-bold leading-[150%] tracking-extra-small">
                     {item.author}
                   </p>
-                  <p className="text-[24px] text-[#300304] font-bold leading-[150%] tracking-[-0.02em] pt-[10px]">
+                  <p className="text-body-large text-[#300304] font-bold leading-[150%] tracking-extra-small pt-[10px]">
                     {item.title}
                   </p>
-                  <p className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em] pt-[10px] break-words">
+                  <p className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small pt-[10px] break-words">
                     {item.body}
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export default function ForumDiscussion() {
                       className="max-w-[20px] h-[20px]"
                       alt=""
                     />
-                    <label className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em]">
+                    <label className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small">
                       {item.upvotes}
                     </label>
                     <img
@@ -162,7 +162,7 @@ export default function ForumDiscussion() {
                       className="max-w-[20px] h-[20px]"
                       alt=""
                     />
-                    <label className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em]">
+                    <label className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small">
                       {item.comments}
                     </label>
                   </div>
@@ -170,7 +170,7 @@ export default function ForumDiscussion() {
                 {/* reply post box */}
                 {openReplyBox === item.id && (
                   <div className="pt-[20px]">
-                    <p className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em]">
+                    <p className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small">
                       Comments
                     </p>
                     <form
@@ -189,7 +189,7 @@ export default function ForumDiscussion() {
                           name="replyPost"
                           id=""
                           rows={1}
-                          className="w-full focus:outline-none font-sora text-left font-normal text-[16px] text-[#3104054D] leading-[150%] tracking-[-0.02em] resize-none overflow-hidden"
+                          className="w-full focus:outline-none font-sora text-left font-regular text-[16px] text-[#3104054D] leading-[150%] tracking-extra-small resize-none overflow-hidden"
                           style={{
                             padding: "13px 15px 13px 0",
                             height: "47px",
@@ -214,10 +214,10 @@ export default function ForumDiscussion() {
                         return filteredReplies.map((reply:any, i:any) => (
                           <div key={i}>
                           <div className="pt-[20px] w-full pl-[30px]">
-                            <p className="text-[16px] text-[#300304] font-bold leading-[150%] tracking-[-0.02em]">
+                            <p className="text-body-large text-[#300304] font-bold leading-[150%] tracking-extra-small">
                               {reply.author}
                             </p>
-                            <p className="text-[16px] text-[#300304] font-normal leading-[150%] tracking-[-0.02em] pt-[8px] break-words">
+                            <p className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small pt-[8px] break-words">
                               {reply.body}
                             </p>
                           </div>
