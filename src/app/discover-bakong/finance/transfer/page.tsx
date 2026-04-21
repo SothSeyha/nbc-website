@@ -34,7 +34,7 @@ export default function Transfer() {
         description1={
           "With Bakong, transfers are seamless. Share the convenience of fast, secure <br /> transactions with family, friends, and businesses with just a few taps."
         }
-        img1={"/img/interbank-transfer/brand-view1.png"}
+        img1={"/img/transfer/brand-view5.png"}
         heading2={"Feel close to home"}
         description2={
           "Have a home in another country? Whether it’s a vacay spot or investment <br /> property, easily keep up with your loan payments (or any bills) from provinces."
