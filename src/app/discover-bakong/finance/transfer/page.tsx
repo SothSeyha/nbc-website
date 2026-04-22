@@ -23,7 +23,7 @@ export default function Transfer() {
       <SectionDisplay2
         heading={"Send Money, Your Way"}
         description={
-          " No matter the time or place, Bakong makes transferring money quick and stress- <br /> free. Whether it’s a gift, a bill, or a loan repayment, your money moves securely <br /> and instantly."
+          " No matter the time or place, Bakong makes transferring money quick and stress- free. Whether it’s a gift, a bill, or a loan repayment, your money moves securely and instantly."
         }
         bgImg={"/img/transfer/frame.png"}
       />
@@ -32,12 +32,12 @@ export default function Transfer() {
       <CardDisplay
         heading1={"Freedom to Send Anywhere"}
         description1={
-          "With Bakong, transfers are seamless. Share the convenience of fast, secure <br /> transactions with family, friends, and businesses with just a few taps."
+          "With Bakong, transfers are seamless. Share the convenience of fast, secure transactions with family, friends, and businesses with just a few taps."
         }
         img1={"/img/transfer/brand-view5.png"}
         heading2={"Feel close to home"}
         description2={
-          "Have a home in another country? Whether it’s a vacay spot or investment <br /> property, easily keep up with your loan payments (or any bills) from provinces."
+          "Have a home in another country? Whether it’s a vacay spot or investment property, easily keep up with your loan payments (or any bills) from provinces."
         }
         btnText1={"ASEAN Countries"}
         btnHref1={"#"}

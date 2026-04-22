@@ -12,7 +12,7 @@ export default function SectionDisplay2({
     <div>
       {/* section display 2 */}
       <div
-        className="w-full min-h-screen pb-[200px] md:pb-[400px] lg:pb-[780px] px-6 md:px-12 lg:px-[80px] bg-cover bg-no-repeat bg-[center_70%] flex flex-col overflow-hidden pt-[75px] relative"
+        className="w-full min-h-screen pb-[200px] md:pb-[400px] lg:pb-[780px] px-[25px] md:px-12 lg:px-[80px] bg-cover bg-no-repeat bg-[center_70%] flex flex-col overflow-hidden pt-[75px] relative"
         style={{ backgroundImage: `url('${bgImg}')` }}
       >
         {/* Gradient overlay — mobile only */}
@@ -29,7 +29,7 @@ export default function SectionDisplay2({
             {heading}
           </p>
           <p
-            className="font-regular text-body lg:text-body-large text-white pt-[20px] text-center leading-[150%] tracking-extra-small"
+            className="font-regular text-body-large text-white pt-[20px] text-center leading-[150%] tracking-extra-small"
             dangerouslySetInnerHTML={{ __html: description }}
           />
         </div>
