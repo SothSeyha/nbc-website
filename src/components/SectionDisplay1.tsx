@@ -51,7 +51,8 @@ export default function SectionDisplay1({
           <img
             src={imgSrc}
             // className="ml-auto md:w-[70%] md:h-[50vh] lg:w-[80%] lg:h-[96vh] object-contain"
-            className="ml-auto w-[100%] h-[50vh] lg:w-[93%] lg:h-[96vh] object-contain"
+            className="ml-auto w-full h-auto aspect-[3.5/4] md:w-[80%] object-cover"
+            // className="ml-auto w-[100%] h-[50vh] lg:w-[93%] lg:h-[96vh] object-contain"
             alt={imgAlt}
           />
         </div>
