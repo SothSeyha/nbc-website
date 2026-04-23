@@ -80,14 +80,13 @@ export default function ForumDiscussion() {
       <div className="w-full h-screen pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden overflow-y-auto">
         <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
         {/* container */}
-        <div className="lg:w-[70%] px-[80px] m-auto pt-[30px] font-sora">
+        <div className="lg:w-[70%] lg:px-[80px] md:px-12 px-[30px] m-auto pt-[30px] font-sora">
           {/* header */}
-          <p className="font-sora uppercase text-center font-semibold text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
+          <p className="font-sora uppercase text-center font-semibold text-[35px] md:text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
             Forum & discussion
           </p>
-          <p className="font-sora text-center font-regular text-body-large text-[#300304] leading-[150%] tracking-extra-small pt-[15px]">
-            A forum for Bakong users, asking and get supports from each other.
-            It is a <br /> community where people can share stuff.
+          <p className="font-sora text-center font-regular text-body-large text-[#300304] leading-[150%] tracking-extra-small pt-[15px] max-w-[520px] mx-auto">
+            A forum for Bakong users, asking and get supports from each other.It is a community where people can share stuff.
           </p>
           <div className="pt-[50px]">
             <form action="" onSubmit={addCmt}>
@@ -128,7 +127,7 @@ export default function ForumDiscussion() {
                   <p className="text-body-large text-[#300304] font-bold leading-[150%] tracking-extra-small pt-[10px]">
                     {item.title}
                   </p>
-                  <p className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small pt-[10px] break-words">
+                  <p className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small pt-[10px] text-justify overflow-hidden">
                     {item.body}
                   </p>
                 </div>
@@ -217,7 +216,7 @@ export default function ForumDiscussion() {
                             <p className="text-body-large text-[#300304] font-bold leading-[150%] tracking-extra-small">
                               {reply.author}
                             </p>
-                            <p className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small pt-[8px] break-words">
+                            <p className="text-body-large text-[#300304] font-regular leading-[150%] tracking-extra-small pt-[8px] text-justify overflow-hidden">
                               {reply.body}
                             </p>
                           </div>

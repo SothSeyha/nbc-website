@@ -17,25 +17,25 @@ export default function BlogCard(blogCard: BlogCard) {
       <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover">
         <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
         {/* container */}
-        <div className="w-full px-[80px] pt-[30px] font-sora">
+        <div className="w-full lg:px-[80px] md:px-12 px-[30px] pt-[30px] font-sora">
           {/* header guideline */}
           <p
             id="ChangeLogs"
-            className="font-sora uppercase text-center font-semibold text-heading-1 text-[#300304] leading-[120%] tracking-extra-small"
+            className="font-sora uppercase text-center font-semibold text-[35px] md:text-heading-1 text-[#300304] leading-[120%] tracking-extra-small"
           >
             {blogCard.headingText}
           </p>
           <p className="font-sora text-center font-regular text-body-large text-[#300304] leading-[150%] tracking-extra-small pt-[15px]">
             {blogCard.subHeading}
           </p>
-          {/* first row blog */}
+          {/* grid blog */}
           <div className="w-full gap-[30px] pt-[30px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
             {blogCard.cardImgArray.map((item, index) => (
               <Link key={index} href="/community/bakong/tutorial/1">
-                <div className="max-w-[440px] pb-[30px] flex flex-col">
+                <div className="w-full pb-[30px] flex flex-col">
                   <img
                     src={`/img/community/blog${index + 1}.svg`}
-                    className="max-w-[440px] h-[294px] object-cover"
+                    className="w-full md:w-[60%] lg:w-full h-auto aspect-[5.6/4] object-cover"
                     alt=""
                   />
                   <div className="flex flex-col gap-[15px]">
