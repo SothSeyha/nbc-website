@@ -21,7 +21,7 @@ export default function CardDisplay(CardDisplay: CardDisplay) {
             {CardDisplay.heading1}
           </p>
           <p
-            className="text-center text-body-large font-regular leading-[150%] tracking-extra-small pt-[26px]"
+            className="text-center text-body-large font-regular leading-[150%] tracking-extra-small pt-[26px] max-w-[700px] mx-auto"
             dangerouslySetInnerHTML={{ __html: CardDisplay.description1 }}
           ></p>
         </div>
@@ -101,7 +101,7 @@ export default function CardDisplay(CardDisplay: CardDisplay) {
         <p className="font-semibold text-[35px] lg:text-heading-1 uppercase leading-[120%] tracking-extra-small text-center">
           Sending gifts? Make it swift
         </p>
-        <p className="font-regular text-body-large leading-[150%] tracking-extra-small pt-[20px] text-center">
+        <p className="font-regular text-body-large leading-[150%] tracking-extra-small pt-[20px] text-center max-w-[700px] mx-auto">
           Make their day with something you know they won't throw away. And
           customise <br /> it no matter what you're celebrating.
         </p>

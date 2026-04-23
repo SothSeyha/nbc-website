@@ -19,7 +19,7 @@ export default function SectionDisplay2({
         <div
           className="absolute inset-0 md:hidden"
           style={{
-            background: `linear-gradient(to bottom, #3c060b 40%, transparent 70%)`,
+            // background: `linear-gradient(to bottom, #3c060b 40%, transparent 70%)`,
           }}
         />
 
@@ -29,7 +29,7 @@ export default function SectionDisplay2({
             {heading}
           </p>
           <p
-            className="font-regular text-body-large text-white pt-[20px] text-center leading-[150%] tracking-extra-small"
+            className="font-regular text-body-large text-white pt-[20px] text-center leading-[150%] tracking-extra-small max-w-[700px] mx-auto"
             dangerouslySetInnerHTML={{ __html: description }}
           />
         </div>
