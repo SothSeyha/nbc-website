@@ -22,8 +22,8 @@ export default function SectionDisplay1({
 }: SectionDisplayProps) {
   return (
     <div className="w-full min-h-screen bg-[#f8f8f6] bg-cover flex flex-col overflow-hidden">
-      {/* <AnnouncementBar />
-      <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" /> */}
+      <AnnouncementBar />
+      <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
 
       {/* section display 1 */}
       <div className="flex-1 w-full lg:px-[80px] md:px-12 px-[25px] font-sora flex flex-col md:flex-row gap-[35px] md:gap-[45px] py-10 md:py-20">
