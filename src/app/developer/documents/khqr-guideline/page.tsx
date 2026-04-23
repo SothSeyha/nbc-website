@@ -13,14 +13,14 @@ export default function KhqrGuideline() {
       <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden">
         <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
         {/* container */}
-        <div className="w-full px-[80px] pt-[30px] font-sora">
+        <div className="w-full lg:px-[80px] md:px-12 px-[30px] pt-[30px] font-sora">
           {/* header guideline */}
-          <p id="ChangeLogs" className="font-sora uppercase text-center font-semibold text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
+          <p id="ChangeLogs" className="font-sora uppercase text-center font-semibold text-[35px] md:text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
             KHQR guideline
           </p>
-          <p className="font-sora uppercase text-center font-regular text-body text-[#300304] leading-[150%] tracking-extra-small pt-[15px]">
+          <p className="font-sora text-center font-regular text-body-large text-[#300304] leading-[150%] tracking-extra-small pt-[20px] max-w-[500px] mx-auto">
             Down below is a documents for KHQR integration both design and
-            technical <br /> integration
+            technical integration
           </p>
           <section className="w-full flex mt-[69px]">
             <nav className="hidden lg:block lg:w-[30%]">
@@ -93,7 +93,7 @@ export default function KhqrGuideline() {
                 <p className="font-sora font-semibold text-heading-2 tracking-extra-small leading-[150%] text-[#300304] mb-[5px]">
                   Purpose
                 </p>
-                <p className="font-sora font-regular text-body-large tracking-extra-small leading-[150%] text-black mb-[5px] pb-[15px] pt-[5px]">
+                <p className="font-sora font-regular text-body-large tracking-extra-small leading-[150%] text-black mb-[5px] pb-[15px] pt-[5px] text-justify">
                   This document describes the detailed specification of Bakong
                   open API offered by National Bank of Cambodia. The expected
                   readers are NBC technical team and third-party technical team.
@@ -103,7 +103,7 @@ export default function KhqrGuideline() {
                 <p className="font-sora font-semibold text-[20px] tracking-extra-small leading-[150%] text-[#300304] mb-[5px]">
                   Scope
                 </p>
-                <p className="font-sora font-regular text-body-large tracking-extra-small leading-[150%] text-black mb-[5px] pb-[15px] pt-[5px]">
+                <p className="font-sora font-regular text-body-large tracking-extra-small leading-[150%] text-black mb-[5px] pb-[15px] pt-[5px] text-justify">
                   This document contains the complete description of the API
                   specification including: endpoint, status code, request and
                   response sample.

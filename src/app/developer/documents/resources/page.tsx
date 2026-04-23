@@ -13,14 +13,14 @@ export default function Resource() {
       <div className="w-full pb-[150px] bg-[#f8f8f6] bg-cover overflow-hidden">
         <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
         {/* container */}
-        <div className="px-[80px] pt-[30px] font-sora">
+        <div className="lg:px-[80px] md:px-12 px-[30px] pt-[30px] font-sora">
           {/* header guideline */}
-          <p id="KHQRLogo" className="font-sora uppercase text-center font-semibold text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
+          <p id="KHQRLogo" className="font-sora uppercase text-center font-semibold text-[35px] md:text-heading-1 text-[#300304] leading-[120%] tracking-extra-small">
             Downloadable assets
           </p>
-          <p className="font-sora uppercase text-center font-regular text-body text-[#300304] leading-[150%] tracking-extra-small pt-[15px]">
+          <p className="font-sora text-center font-regular text-body text-[#300304] leading-[150%] tracking-extra-small max-w-[500px] mx-auto pt-[20px]">
             Down below is a documents for KHQR integration both design and
-            technical <br /> integration
+            technical integration
           </p>
           <section className="w-full flex mt-[50px] gap-[60px]">
             <nav className="lg:block lg:w-[20%] hidden">
@@ -167,7 +167,7 @@ export default function Resource() {
               </div>
             </article>
             <nav className="lg:w-[20%] lg:block hidden">
-              <p className="font-sora font-semibold text-[24px] tracking-extra-small leading-[150%] text-[#300304] mb-[5px]">
+              <p className="font-sora font-semibold text-[20px] md:text-[22px] tracking-extra-small leading-[150%] text-[#300304] mb-[5px]">
                 In this articles
               </p>
               <ul className="w-[100%] font-sora font-regular text-body-large tracking-extra-small leading-[150%] [&_li]:py-3 w-[80%] sticky top-20">
