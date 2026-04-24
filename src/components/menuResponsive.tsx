@@ -51,9 +51,40 @@ export default function MenuResponsive() {
 
       {/* Mobile drawer */}
       {isOpenMenu && (
-        <div className="lg:hidden absolute top-[70px] left-0 w-full bg-[#310405] text-[#F8F8F7] z-20 overflow-y-auto max-h-[80vh]">
+        <div className="lg:hidden absolute top-[0px] pt-[25px] left-0 w-full bg-[#310405] text-[#F8F8F7] z-10 overflow-y-auto max-h-[80vh]">
           {/* Discover Bakong */}
-          <div className="border-b border-[#F8F8F71A]">
+          <div className="w-full border-b border-[#F8F8F71A]">
+            <div className="w-full flex items-center px-[25px] pb-[20px]">
+              <div className="w-[70%]">
+                <Link href={"/"} onClick={() => setIsOpenMenu(false)}>
+                  <img
+                    src={"/img/bakong-logo.svg"}
+                    alt="Bakong"
+                    className="w-[160px] md:w-[160px] lg:w-[160px] h-auto object-contain bg-red-600"
+                  />
+                </Link>
+              </div>
+              <button
+                className="w-[30%] bg-yellow-600 ml-auto"
+                onClick={() => setIsOpenMenu(false)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
             <button
               className="w-full flex justify-between items-center px-6 py-4 text-body-large font-semibold"
               onClick={() =>

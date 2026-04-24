@@ -27,7 +27,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
     >
       {/* HEADER */}
       <div className="relative z-20 flex w-full lg:px-[80px] md:px-12 px-[25px] pt-[25px] pb-[20px]">
-        <div className="w-[35%] lg:w-[20%]">
+        <div className="w-[70%] lg:w-[20%]">
           <Link href={"/"}>
             <img
               src={logo}
@@ -96,7 +96,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
             </li>
           </ul>
         </div>
-        <div className="w-[20%]"></div>
+        <div className="lg:w-[20%]"></div>
 
         <MenuResponsive />
       </div>
