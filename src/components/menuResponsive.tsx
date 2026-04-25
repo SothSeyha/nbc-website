@@ -55,17 +55,17 @@ export default function MenuResponsive() {
           {/* Discover Bakong */}
           <div className="w-full border-b border-[#F8F8F71A]">
             <div className="w-full flex items-center px-[25px] pb-[20px]">
-              <div className="w-[70%]">
+              <div className="w-[40%]">
                 <Link href={"/"} onClick={() => setIsOpenMenu(false)}>
                   <img
                     src={"/img/bakong-logo.svg"}
                     alt="Bakong"
-                    className="w-[160px] md:w-[160px] lg:w-[160px] h-auto object-contain bg-red-600"
+                    className="w-[160px] md:w-[160px] lg:w-[160px] h-auto object-contain"
                   />
                 </Link>
               </div>
               <button
-                className="w-[30%] bg-yellow-600 ml-auto"
+                className="w-[30%] ml-auto flex items-center justify-end"
                 onClick={() => setIsOpenMenu(false)}
               >
                 <svg

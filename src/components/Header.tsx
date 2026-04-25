@@ -27,7 +27,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
     >
       {/* HEADER */}
       <div className="relative z-20 flex w-full lg:px-[80px] md:px-12 px-[25px] pt-[25px] pb-[20px]">
-        <div className="w-[70%] lg:w-[20%]">
+        <div className="w-[40%] lg:w-[20%]">
           <Link href={"/"}>
             <img
               src={logo}
@@ -104,12 +104,12 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
       {/* DROPDOWN */}
       <div className="hidden lg:block">
         {activeMenu === "discover" && (
-          <div className="absolute top-[0px] left-0 w-full h-[552px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10">
+          <div className="absolute top-0 left-0 w-full pb-[50px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10">
             <p className="text-[20px] font-semibold mb-[20px]">
               Discover Bakong
             </p>
 
-            <div className="flex gap-[30px]">
+            <div className="flex gap-[5px] flex-wrap">
               <ul className="flex flex-col gap-[3px] pb-[10px]">
                 <li className="font-semibold text-[16px]">Daily Finance</li>
                 <Link href={"/discover-bakong/finance/transfer"}>
@@ -120,7 +120,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
                   cursor-pointer
                   h-[50px]
                   pl-[20px]
-                  pr-[125px]
+                  pr-[20px] 
                   flex flex-col justify-center
                   transition-all duration-200
                 ${
@@ -392,12 +392,12 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
           </div>
         )}
         {activeMenu === "developer" && (
-          <div className="absolute top-[0px] left-0 w-full h-[552px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10">
-            <p className="text-[20px] font-semibold mb-[20px]">
+          <div className="absolute top-0 left-0 w-full pb-[50px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10">
+            <p className="text-[20px] font-semibold mb-[25px]">
               Integrate Bakong
             </p>
 
-            <div className="flex gap-[30px]">
+            <div className="flex gap-[5px] flex-wrap">
               <ul className="flex flex-col gap-[3px] pb-[10px]">
                 <li className="font-semibold text-[16px]">Documents</li>
                 <Link href={"/developer/documents/khqr-guideline"}>
@@ -408,7 +408,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
                   cursor-pointer
                   h-[50px]
                   pl-[20px]
-                  pr-[125px]
+                  pr-[20px]
                   flex flex-col justify-center
                   transition-all duration-200
                 ${
@@ -560,12 +560,12 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
           </div>
         )}
         {activeMenu === "community" && (
-          <div className="absolute top-[0px] left-0 w-full h-[552px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10">
-            <p className="text-[20px] font-semibold mb-[20px]">
+          <div className="absolute top-0 left-0 w-full pb-[50px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10">
+            <p className="text-[20px] font-semibold mb-[25px]">
               Join Bakong Community
             </p>
 
-            <div className="flex gap-[30px]">
+            <div className="flex gap-[5px]flex-wrap">
               <ul className="flex flex-col gap-[3px] pb-[10px]">
                 <li className="font-semibold text-[16px]">Community</li>
                 <Link href={"/community/community/forum-discussion"}>
@@ -576,7 +576,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
                   cursor-pointer
                   h-[50px]
                   pl-[20px]
-                  pr-[125px]
+                  pr-[20px]
                   flex flex-col justify-center
                   transition-all duration-200
                 ${
