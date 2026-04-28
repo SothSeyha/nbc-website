@@ -105,7 +105,7 @@ export default function CardDisplay(CardDisplay: CardDisplay) {
           Make their day with something you know they won't throw away. And
           customise <br /> it no matter what you're celebrating.
         </p>
-        <div className="w-full pt-[45px] grid md:grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[60px]  ">
+        <div className="w-full pt-[45px] grid md:grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[60px]">
           {CardDisplay.imgCard.map((item, index) => (
             <div key={index} className="w-full">
               <img
