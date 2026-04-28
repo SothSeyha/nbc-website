@@ -11,7 +11,7 @@ export default function HomePage() {
           {/* Container */}
           <div className="w-full lg:px-[80px] md:px-12 px-[25px] pt-[50px] lg:pt-[90px] font-sora">
             <div className="text-[#F8F8F7]">
-              <p className="font-sora uppercase text-heading-1 lg:text-display font-semibold leading-[120%] tracking-extra-small lg:w-[890px]">
+              <p className="font-sora uppercase text-[35px] md:text-heading-1 lg:text-display font-semibold leading-[120%] tracking-extra-small lg:w-[890px]">
                 Seamless Interbank
                 Transfers,
                 Local to Global
