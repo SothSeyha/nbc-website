@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import MenuResponsive from "./menuResponsive";
+import { fetchItems } from "../libs/api";
 
 type HeaderProps = {
   logoSrc: string;
@@ -18,6 +19,12 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
   const logo = activeMenu ? "/img/bakong-logo.svg" : logoSrc;
   const colorText = activeMenu ? "text-white" : textColor;
 
+  async function gg () {
+    console.log("hi")
+    const result = await fetchItems();
+    console.log(result, "return")
+  }
+
   return (
     <nav
       onMouseLeave={() => {
@@ -28,7 +35,9 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
       {/* HEADER */}
       <div className="relative z-20 flex w-full lg:px-[80px] md:px-12 px-[25px] pt-[25px] pb-[20px]">
         <div className="w-[40%] lg:w-[20%]">
-          <Link href={"/"}>
+          <Link
+          onClick={gg}
+          href={"/"}>
             <img
               src={logo}
               alt="Bakong"
