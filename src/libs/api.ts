@@ -1,8 +1,8 @@
 import api from './axios'
 
-export async function fetchItems() {
-  const response = await api.get('/posts')
-  return response.data
+export async function fetchItems(endpoint: string) {
+  const response = await api.get(endpoint)
+  return response.data.data
 }
 
 export async function fetchItemById(id: string | number) {
