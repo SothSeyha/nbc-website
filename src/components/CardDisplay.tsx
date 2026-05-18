@@ -9,6 +9,8 @@ interface CardDisplay {
   btnText2: string;
   btnHref2: string;
   img2: string;
+  heading3: string;
+  description3: string;
   imgCard: any[];
 }
 export default function CardDisplay(CardDisplay: CardDisplay) {
@@ -99,17 +101,16 @@ export default function CardDisplay(CardDisplay: CardDisplay) {
       {/* last section */}
       <div className="w-full pt-[60px] lg:pt-[80px] min-h-screen mb-[40px] md:mb-0 px-[25px] md:px-12 lg:px-[80px] flex flex-col overflow-hidden items-center">
         <p className="font-semibold text-[35px] lg:text-heading-1 uppercase leading-[120%] tracking-extra-small text-center">
-          Sending gifts? Make it swift
+          {CardDisplay.heading3}
         </p>
         <p className="font-regular text-body-large leading-[150%] tracking-extra-small pt-[20px] text-center max-w-[700px] mx-auto">
-          Make their day with something you know they won't throw away. And
-          customise <br /> it no matter what you're celebrating.
+          {CardDisplay.description3}
         </p>
         <div className="w-full pt-[45px] grid md:grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[60px]">
-          {CardDisplay.imgCard.map((item, index) => (
+          {CardDisplay.imgCard.map((item:any, index:number) => (
             <div key={index} className="w-full">
               <img
-                src={`/img/transfer/image${index + 1}.png`}
+                src={process.env.NEXT_PUBLIC_API_URL+item}
                 className="w-full md:w-[60%] lg:w-[98%] h-auto aspect-[3/4] object-cover rounded-lg"
                 alt=""
               />

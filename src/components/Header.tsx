@@ -12,28 +12,24 @@ type HeaderProps = {
 };
 
 export default function Header({ logoSrc, textColor }: HeaderProps) {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [menuLists, setMenuLists] = useState<any[]>([]);
   // const isOpen = !!activeMenu; // header + dropdown open only if a menu is active
   const logo = activeMenu ? "/img/bakong-logo.svg" : logoSrc;
   const colorText = activeMenu ? "text-white" : textColor;
 
-  async function gg () {
-    console.log("hi")
-    const result = await fetchItems('/flows/trigger/09cd09ab-c5e4-42a6-899d-c2c179092aab');
-    console.log(result, "return")
-  }
-
-  async function fetchMenu () {
-    const fetchData = await fetchItems('/flows/trigger/09cd09ab-c5e4-42a6-899d-c2c179092aab');
-    console.log(fetchData, "menu data")
+  async function fetchMenu() {
+    const fetchData = await fetchItems(
+      "/flows/trigger/09cd09ab-c5e4-42a6-899d-c2c179092aab",
+    );
+    console.log(fetchData, "menu data");
     setMenuLists(fetchData);
   }
 
   useEffect(() => {
     fetchMenu();
-  }, [])
+  }, []);
 
   return (
     <nav
@@ -45,9 +41,7 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
       {/* HEADER */}
       <div className="relative z-20 flex w-full lg:px-[80px] md:px-12 px-[25px] pt-[25px] pb-[20px]">
         <div className="w-[40%] lg:w-[20%]">
-          <Link
-          onClick={gg}
-          href={"/"}>
+          <Link href={"/"}>
             <img
               src={logo}
               alt="Bakong"
@@ -63,9 +57,9 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
             {/* DISCOVER */}
             {menuLists.map((item, index) => (
               <li
-              key={index}
-              onMouseEnter={() => setActiveMenu(item.menu_label)}
-              className={`
+                key={index}
+                onMouseEnter={() => setActiveMenu(item.menu_label)}
+                className={`
                 cursor-pointer
                 px-[20px] py-[12px]
                 flex items-center justify-center
@@ -76,45 +70,54 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
                     : "bg-transparent hover:bg-[#F8F8F71A]"
                 }
               `}
-            >
-              {item.menu_label}
-            </li>
+              >
+                {item.menu_label}
+              </li>
             ))}
           </ul>
         </div>
         <div className="lg:w-[20%]"></div>
 
-        <MenuResponsive />
+        <MenuResponsive menuDataList={menuLists} />
       </div>
 
       {/* DROPDOWN */}
       <div className="hidden lg:block">
-        {menuLists.map((item, index)=> (
-          
-          activeMenu === item.menu_label && (
-          <div
-          key={index}
-          className="absolute top-0 left-0 w-full pb-[50px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10">
-            <p className="text-[20px] font-semibold mb-[20px]">
-              {item.menu_sub}
-            </p>
-
-            <div className="flex gap-[5px] flex-wrap">
-              {item.items.map((item:any, index:number) => (
-                <ul 
+        {menuLists.map(
+          (item, index) =>
+            activeMenu === item.menu_label && (
+              <div
                 key={index}
-                className="flex flex-col gap-[0px] pb-[10px]">
-                <li
-                className="font-semibold text-[16px]">{item.parent_title}</li>
-                {item.items.map((item:any, index:number) => (
-                  <Link
-                  key={index} 
-                  href={item.sub_menu_link}
-                  target={item.sub_menu_link === "https://api-bakong.nbc.gov.kh/" ? "_bllank" : "_self  "}>
-                  <li
-                    onMouseEnter={() => setActiveSubmenu(item.title)}
-                    onMouseLeave={() => setActiveSubmenu(null)}
-                    className={`
+                className="absolute top-0 left-0 w-full pb-[50px] bg-[#310405] pl-[80px] pr-[80px] pt-[190px] text-[#F8F8F7] z-10"
+              >
+                <p className="text-[20px] font-semibold mb-[20px]">
+                  {item.menu_sub}
+                </p>
+
+                <div className="flex gap-[5px] flex-wrap">
+                  {item.items.map((item: any, index: number) => (
+                    <ul
+                      key={index}
+                      className="flex flex-col gap-[0px] pb-[10px]"
+                    >
+                      <li className="font-semibold text-[16px]">
+                        {item.parent_title}
+                      </li>
+                      {item.items.map((item: any, index: number) => (
+                        <Link
+                          key={index}
+                          href={item.sub_menu_link}
+                          target={
+                            item.sub_menu_link ===
+                            "https://api-bakong.nbc.gov.kh/"
+                              ? "_bllank"
+                              : "_self  "
+                          }
+                        >
+                          <li
+                            onMouseEnter={() => setActiveSubmenu(item.title)}
+                            onMouseLeave={() => setActiveSubmenu(null)}
+                            className={`
                   cursor-pointer
                   h-[50px]
                   pl-[20px]
@@ -127,17 +130,17 @@ export default function Header({ logoSrc, textColor }: HeaderProps) {
                     : "bg-transparent hover:bg-[#F8F8F71A]"
                 }
               `}
-                  >
-                    {item.title}
-                  </li>
-                </Link>
-                ))}
-              </ul>
-              ))}
-            </div>
-          </div>
-        )
-        ))}
+                          >
+                            {item.title}
+                          </li>
+                        </Link>
+                      ))}
+                    </ul>
+                  ))}
+                </div>
+              </div>
+            ),
+        )}
       </div>
     </nav>
   );
