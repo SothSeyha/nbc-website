@@ -1,49 +1,60 @@
+"use client";
+
 import AnnouncementBar from "@/src/components/AnnouncementBar";
 import CardDisplay from "@/src/components/CardDisplay";
 import Header from "@/src/components/Header";
 import SectionDisplay1 from "@/src/components/SectionDisplay1";
 import SectionDisplay2 from "@/src/components/SectionDisplay2";
+import { fetchItems } from "@/src/libs/api";
+import { useEffect, useState } from "react";
 
 export default function ReceiveKhqr() {
+  const [content, setConent] = useState<any>(null);
+
+  async function fetchContent() {
+    const data = await fetchItems("main-content?path=/discover-bakong/5");
+    console.log(data, "data");
+    setConent(data);
+  }
+
+  useEffect(() => {
+    fetchContent();
+  }, []);
+
   return (
     <section>
       {/* first section */}
-      <SectionDisplay1
-        title={"Receive money via KHQR"}
-        display={"Get paid faster. <br /> Smarter. <br /> Simpler."}
-        description={
-          " Skip the cash and awkward account numbers. With KHQR, receiving money is as easy as scan, send, done."
-        }
-        btnText={"Start Sending Mone"}
+        <SectionDisplay1
+        title={content?.items[0].label}
+        display={content?.items[0].title}
+        description={content?.items[0].description}
+        btnText={"Start Sending Money"}
         btnHref={"#"}
-        imgSrc={"/img/transfer/point.png"}
+        imgSrc={process.env.NEXT_PUBLIC_API_URL +content?.items[0].image}
         imgAlt={""}
       />
       {/* second section */}
       <SectionDisplay2
-        heading={"One Platform, Many Banks"}
-        description={
-          "Link multiple accounts to Bakong and move money between them effortlessly, <br /> without switching apps."
-        }
-        bgImg={"/img/transfer/frame.png"}
+        heading={content?.items[1].title}
+        description={content?.items[1].description}
+        bgImg={process.env.NEXT_PUBLIC_API_URL +content?.items[1].image}
       />
+
       {/* third section */}
       <CardDisplay
-        heading1={"Simplify Your Finances"}
-        description1={
-          "Bring all your accounts together in one seamless view. Track, manage, and <br /> transfer effortlessly—no more switching between apps."
-        }
-        img1={"/img/link-acc/brand-view1.png"}
-        heading2={"Manage Everything, <br /> Effortlessly"}
-        description2={
-          "Why juggle multiple apps when you can have everything in one? Stay on top of all <br /> your accounts with ease, all in one place."
-        }
-        btnText1={"Manage my money"}
+        heading1={content?.items[2].title}
+        description1={content?.items[2].description}
+        img1={process.env.NEXT_PUBLIC_API_URL +content?.items[2].image}
+        heading2={content?.items[3].title}
+        description2={content?.items[3].description}
+        btnText1={"ASEAN Countries"}
         btnHref1={"#"}
-        btnText2={"Transfer to accounts"}
+        btnText2={"Provinces"}
         btnHref2={"#"}
-        img2={"/img/link-acc/brand-view2.png"}
-        imgCard={[1, 2, 3]}
+        img2={process.env.NEXT_PUBLIC_API_URL +content?.items[3].image}
+        heading3={content?.items[4].title}
+        description3={content?.items[4].description}
+        imgCard={Array.isArray(content?.items[4]?.image) ? content?.items[4]?.image : []}
       />
     </section>
   );

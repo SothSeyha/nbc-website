@@ -1,50 +1,60 @@
+"use client";
+
 import AnnouncementBar from "@/src/components/AnnouncementBar";
 import CardDisplay from "@/src/components/CardDisplay";
 import Header from "@/src/components/Header";
 import SectionDisplay1 from "@/src/components/SectionDisplay1";
 import SectionDisplay2 from "@/src/components/SectionDisplay2";
+import { fetchItems } from "@/src/libs/api";
+import { useEffect, useState } from "react";
 
-export default function Transfer() {
+export default function Blockchain() {
+  const [content, setConent] = useState<any>(null);
+
+  async function fetchContent() {
+    const data = await fetchItems("main-content?path=/discover-bakong/11");
+    console.log(data, "data");
+    setConent(data);
+  }
+
+  useEffect(() => {
+    fetchContent();
+  }, []);
+
   return (
     <section>
       {/* first section */}
-      <SectionDisplay1
-        title={"Blockchain Payment"}
-        display={"Powered by <br /> National Bank <br /> of Cambodia"}
-        description={
-          "KHQR is a standardized QR code payment system introduced by the National Bank of Cambodia to ensure seamless, secure payments nationwide."
-        }
+        <SectionDisplay1
+        title={content?.items[0].label}
+        display={content?.items[0].title}
+        description={content?.items[0].description}
         btnText={"Start Sending Money"}
         btnHref={"#"}
-        imgSrc={"/img/transfer/point.png"}
+        imgSrc={process.env.NEXT_PUBLIC_API_URL +content?.items[0].image}
         imgAlt={""}
       />
       {/* second section */}
       <SectionDisplay2
-        heading={"Send Money, Your Way"}
-        description={
-          " No matter the time or place, Bakong makes transferring money quick and stress- <br /> free. Whether it’s a gift, a bill, or a loan repayment, your money moves securely <br /> and instantly."
-        }
-        bgImg={"/img/transfer/frame.png"}
+        heading={content?.items[1].title}
+        description={content?.items[1].description}
+        bgImg={process.env.NEXT_PUBLIC_API_URL +content?.items[1].image}
       />
 
       {/* third section */}
       <CardDisplay
-        heading1={"Freedom to Send Anywhere"}
-        description1={
-          "With Bakong, transfers are seamless. Share the convenience of fast, secure <br /> transactions with family, friends, and businesses with just a few taps."
-        }
-        img1={"/img/interbank-transfer/brand-view1.png"}
-        heading2={"Feel close to home"}
-        description2={
-          "Have a home in another country? Whether it’s a vacay spot or investment <br /> property, easily keep up with your loan payments (or any bills) from provinces."
-        }
+        heading1={content?.items[2].title}
+        description1={content?.items[2].description}
+        img1={process.env.NEXT_PUBLIC_API_URL +content?.items[2].image}
+        heading2={content?.items[3].title}
+        description2={content?.items[3].description}
         btnText1={"ASEAN Countries"}
         btnHref1={"#"}
         btnText2={"Provinces"}
         btnHref2={"#"}
-        img2={"/img/transfer/brand-view2.png"}
-        imgCard={[1, 2, 3]}
+        img2={process.env.NEXT_PUBLIC_API_URL +content?.items[3].image}
+        heading3={content?.items[4].title}
+        description3={content?.items[4].description}
+        imgCard={Array.isArray(content?.items[4]?.image) ? content?.items[4]?.image : []}
       />
     </section>
   );
