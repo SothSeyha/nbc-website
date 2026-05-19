@@ -1,189 +1,61 @@
+"use client";
+
 import AnnouncementBar from "@/src/components/AnnouncementBar";
+import CardDisplay from "@/src/components/CardDisplay";
 import Header from "@/src/components/Header";
+import SectionDisplay1 from "@/src/components/SectionDisplay1";
+import SectionDisplay2 from "@/src/components/SectionDisplay2";
+import { fetchItems } from "@/src/libs/api";
+import { useEffect, useState } from "react";
 
 export default function Card() {
+  const [content, setConent] = useState<any>(null);
+
+  async function fetchContent() {
+    const data = await fetchItems("main-content?path=/discover-bakong/finance/2");
+    console.log(data, "data");
+    setConent(data);
+  }
+
+  useEffect(() => {
+    fetchContent();
+  }, []);
+
   return (
     <section>
-      <AnnouncementBar />
-      <div className="w-full pb-[50px] bg-[#f8f8f6] bg-cover">
-        <Header logoSrc="/img/bakong-logo-red.svg" textColor="text-[#310405]" />
-        {/* container */}
-        <div className="pl-[80px] pr-[80px] pt-[20px] font-sora flex">
-          <div className="pt-[70px] bg-red w-[50%] pt-[140px]">
-            <p className="uppercase font-semibold text-[20px] mb-[25px]">
-              Debit cards
-            </p>
-            <p className="uppercase font-semibold text-[50px] leading-[120%] tracking-[-0.02em] mb-[25px]">
-              Your Digital <br /> Wallet’s Best <br /> Friend
-            </p>
-            <div className="font-normal text-[16px] leading-[150%] tracking-[-0.02em] max-w-[390px] text-justify">
-              Experience the convenience of a virtual card with Bakong.
-              Instantly generate and use a secure digital card for all your
-              online and in-app purchases—no need for a physical card.
-            </div>
-            <div className="bg-[#D93744] w-[160px] h-[46px] flex flex-col justify-center mt-[30px]">
-              <a href="#">
-                <p className="font-normal text-[14px] text-center text-white">
-                  Start Sending Money
-                </p>
-              </a>
-            </div>
-          </div>
-          <div className="bg-red w-[50%]">
-            <img
-              src="/img/card/tg1.svg"
-              className="w-[630px] h-[700px] "
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
+      {/* first section */}
+        <SectionDisplay1
+        title={content?.items[0].label}
+        display={content?.items[0].title}
+        description={content?.items[0].description}
+        btnText={"Start Sending Money"}
+        btnHref={"#"}
+        imgSrc={process.env.NEXT_PUBLIC_API_URL +content?.items[0].image}
+        imgAlt={""}
+      />
       {/* second section */}
-      <div className="w-full pb-[780px] bg-[url('/img/card/frame.png')] bg-cover">
-        <p className="uppercase font-semibold text-[38px] text-white text-center pt-[60px] leading-[120%] tracking-[-0.02em]">
-          Shop Safely Online
-        </p>
-        {/* w-[460px] mx-auto text-justify */}
-        <p className="font-normal text-[16px] text-white pt-[20px] text-center leading-[150%] tracking-[-0.02em]">
-          Protect your information with virtual card numbers that keep your
-          personal <br /> details private while making secure payments.
-        </p>
-      </div>
+      <SectionDisplay2
+        heading={content?.items[1].title}
+        description={content?.items[1].description}
+        bgImg={process.env.NEXT_PUBLIC_API_URL +content?.items[1].image}
+      />
+
       {/* third section */}
-      <div className="w-full h-full pt-[60px] pb-[100px] bg-[#f8f8f6]">
-        <div className="text-[#300304]">
-          <p className="text-center text-[32px] uppercase  font-semibold leading-[150%] tracking-[-0.02em]">
-            Control at Your Fingertips
-          </p>
-          <p className="text-center text-[16px] font-normal leading-[150%] tracking-[-0.02em] pt-[26px]">
-            Easily freeze, unfreeze, or delete your virtual card whenever you
-            need to. Stay in <br /> control of your spending with real-time
-            transaction tracking.
-          </p>
-        </div>
-        {/* first card */}
-        {/* <div className="flex items-center justify-center pt-[60px] relative">
-          <img src="/img/card/brand-view1.png" className="w-[990px] h-[592px]" alt="" />
-        </div> */}
-        <div className="w-full h-full pb-[30px] bg-[#f8f8f6]">
-          <div className="flex items-center justify-center pt-[60px] relative">
-            <div className="w-[290px] h-[46px] flex absolute top-[220px] right-[320px]">
-              <div className="w-[46px] h-[46px] bg-[#310405]">
-                <img
-                  src="/img/arrow-icon.svg"
-                  className="w-[46px] h-[46px]"
-                  alt=""
-                />
-              </div>
-              <div className="w-[230px] h-[46px] bg-[#FF4F3F] flex flex-col justify-center">
-                <p className="font-sora font-normal text-[22px] text-white  uppercase">
-                  Shopping Online
-                </p>
-              </div>
-            </div>
-
-            <img
-              src="/img/card/brand-view1.svg"
-              className="w-[411px] h-[592px]"
-              alt=""
-            />
-            <div
-              className="
-              w-[300px] h-[160px] bg-[#BAF6E2] p-[16px] absolute bottom-[250px] left-[350px]
-              font-sora
-              [&_*]:leading-[150%]
-              [&_*]:tracking-[-0.02em]
-              pl-[24px] pt-[21px]"
-            >
-              <div className="flex pl-0">
-                <img
-                  src="/img/phone-number.png"
-                  className="w-[48px] h-[48px] mt-[-4px]"
-                  alt=""
-                />
-                <img src="/img/qr.png" className="w-[42px] h-[42px]" alt="" />
-              </div>
-              <p className="font-normal text-[24px]">
-                Paid by KHQR Code <br /> or Bakong Network
-              </p>
-            </div>
-            <div
-              className="
-              w-[260px] h-[150px] bg-[#DDF6B9] p-[16px] absolute bottom-[60px] right-[420px]
-              font-sora
-              [&_*]:leading-[150%]
-              [&_*]:tracking-[-0.02em]
-              pl-[24px] pt-[18px]"
-            >
-              <p className="font-normal text-[24px]">Bought Shirt</p>
-
-              <p className="font-bold text-[32px]">៛ 267,000</p>
-
-              <p className="font-normal text-[16px]">From DM Store, Taobao</p>
-            </div>
-          </div>
-        </div>
-        {/* second card */}
-        <div className="pl-[100px] pr-[80px] pt-[230px] flex w-full">
-          <div className="w-[49%] flex flex-col justify-center pt-[160px]">
-            <p className="uppercase text-[32px] text-[#310405] font-semibold leading-[120%] tracking-[-0.02em]">
-              Instant Access Anytime
-            </p>
-            <p className="text-[16px] text-[#310405] font-normal leading-[120%] tracking-[-0.02em] pt-[12px]">
-              No waiting for deliveries! Your virtual card is ready to use as
-              soon as you create it <br /> in the Bakong app.
-            </p>
-            <div className="flex gap-[10px]">
-              <div className="w-[200px] h-[50px] bg-[#3003040D] flex flex-col justify-center mt-[20px]">
-                <a href="#">
-                  <p className="text-[16px] text-center">Buy anything online</p>
-                </a>
-              </div>
-              <div className="w-[200px] h-[50px] bg-[#3003040D] flex flex-col justify-center mt-[20px]">
-                <a href="#">
-                  <p className="text-[16px] text-center text-[#c8bebd]">
-                    Order food with card
-                  </p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="w-[51%] h-[200px]">
-            <img
-              src="/img/card/brand-view2.png"
-              className="w-[600px] h-[590px]"
-              alt=""
-            />
-          </div>
-        </div>
-        {/* last section */}
-        <div className="pl-[100px] pr-[80px] pt-[470px]">
-          <p className="uppercase text-[32px] text-[#300304] font-semibold leading-[120%] tracking-[-0.02em] text-center">
-            Sending gifts? Make it swift
-          </p>
-          <p className="text-center text-[16px] font-normal leading-[150%] tracking-[-0.02em] pt-[10px]">
-            Make their day with something you know they won't throw away. And
-            customise <br /> it no matter what you're celebrating.
-          </p>
-          <div className="flex gap-[50px] mt-[50px]">
-            <img
-              src="/img/card/image2.png"
-              className="w-[400px] h-[582px]"
-              alt=""
-            />
-            <img
-              src="/img/card/image3.png"
-              className="w-[400px] h-[582px]"
-              alt=""
-            />
-            <img
-              src="/img/card/image4.png"
-              className="w-[400px] h-[582px]"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
+      <CardDisplay
+        heading1={content?.items[2].title}
+        description1={content?.items[2].description}
+        img1={process.env.NEXT_PUBLIC_API_URL +content?.items[2].image}
+        heading2={content?.items[3].title}
+        description2={content?.items[3].description}
+        btnText1={"ASEAN Countries"}
+        btnHref1={"#"}
+        btnText2={"Provinces"}
+        btnHref2={"#"}
+        img2={process.env.NEXT_PUBLIC_API_URL +content?.items[3].image}
+        heading3={content?.items[4].title}
+        description3={content?.items[4].description}
+        imgCard={Array.isArray(content?.items[4]?.image) ? content?.items[4]?.image : []}
+      />
     </section>
   );
 }
