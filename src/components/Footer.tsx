@@ -1,168 +1,120 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { fetchItems } from "../libs/api";
+
 export default function Footer() {
+  const [footer, setFooter] = useState<any>(null);
+
+  async function fetchFooterData() {
+    const data = await fetchItems("footer-section");
+    setFooter(data);
+  }
+
+  useEffect(() => {
+    fetchFooterData();
+  }, []);
+
   return (
     <nav>
-      <div className="bg-[#310405] w-full h-full pb-[190px] pt-[80px] flex">
-        <div className="pl-[80px] pr-[80px]">
+      <div className="bg-[#310405] min-h-screen w-full px-[25px] md:px-6 lg:px-[80px] pt-[40px] lg:pt-[80px] pb-[40px] lg:pb-[80px] flex flex-col lg:flex-row">
+        <div className="w-full lg:w-[45%] pb-[100px] lg:pb-0">
           <div>
             <p className="font-bold text-[20px] text-[#F8F8F7] leading-[150%] tracking-[-0.02em]">
-              What are you waiting for?
+              {footer?.label ?? "What are you waiting for?"}
             </p>
-            <p className="font-semibold text-[40px] text-[#F8F8F7] uppercase leading-[150%] tracking-[-0.02em] pt-[30px]">
-              Change the way you <br /> money
+            <p className="font-semibold text-[35px] md:text-[45px] text-[#F8F8F7] uppercase leading-[150%] tracking-[-0.02em] pt-[30px]">
+              {footer?.title ?? "Change the way you money"}
             </p>
             <p className="font-normal text-[16px] text-[#F8F8F7] leading-[150%] tracking-[-0.02em] pt-[90px] pb-[80px]">
-              Learn more about Bakong, chat with the team, others in the
-              community, <br />
-              and have your say in shaping the future of Digital Money.
+              {footer?.description ??
+                "Learn more about Bakong, chat with the team, others in the community, and have your say in shaping the future of Digital Money."}
             </p>
           </div>
           {/* contact */}
-          <div className="flex flex-col gap-y-[12px] pt-[32px] w-full">
-            {/* phone */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex gap-[12px] w-full">
-                <img
-                  className="w-[16px] h-[16px] mt-[5px]"
-                  src="/img/footer/call.png"
-                  alt=""
-                />
-                <p className="font-normal text-[20px] text-[#F8F8F7]">
-                  Phone number
-                </p>
-              </div>
-              <div className="flex items-center gap-[4px] w-full">
-                <p className="font-normal text-[16px] text-[#F8F8F7]">+</p>
-                <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">
-                  +85523722563
-                </p>
-              </div>
-            </div>
-            <div className="w-[450px] h-[1px] bg-[#F8F8F74D]"></div>
-            {/* Email */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex gap-[12px] w-full">
-                <img
-                  className="w-[16px] h-[16px] mt-[5px]"
-                  src="/img/footer/email.png"
-                  alt=""
-                />
-                <p className="font-normal text-[20px] text-[#F8F8F7]">Email</p>
-              </div>
-              <div className="flex items-center gap-[4px] w-full">
-                <p className="font-normal text-[16px] text-[#F8F8F7]">@</p>
-                <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">
-                  support@bakong.gov.kh
-                </p>
-              </div>
-            </div>
-            <div className="w-[450px] h-[1px] bg-[#F8F8F74D]"></div>
-            {/* Twitter */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex gap-[12px] w-full">
-                <img
-                  className="w-[20px] h-[20px] mt-[5px]"
-                  src="/img/footer/twitter.png"
-                  alt=""
-                />
-                <p className="font-normal text-[20px] text-[#F8F8F7]">
-                  Twitter
-                </p>
-              </div>
-              <div className="flex items-center gap-[4px] w-full">
-                <p className="font-normal text-[16px] text-[#F8F8F7]">⬈</p>
-                <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">
-                  @bakong_nbc
-                </p>
-              </div>
-            </div>
-            <div className="w-[450px] h-[1px] bg-[#F8F8F74D]"></div>
-            {/* Instagram */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex gap-[12px] w-full">
-                <img
-                  className="w-[20px] h-[20px] mt-[5px]"
-                  src="/img/footer/instagram.png"
-                  alt=""
-                />
-                <p className="font-normal text-[20px] text-[#F8F8F7]">
-                  Instagram
-                </p>
-              </div>
-              <div className="flex items-center gap-[4px] w-full">
-                <p className="font-normal text-[16px] text-[#F8F8F7]">⬈</p>
-                <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">
-                  @bakong_nbc
-                </p>
-              </div>
-            </div>
-            <div className="w-[450px] h-[1px] bg-[#F8F8F74D]"></div>
-            {/* Facebook */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex gap-[12px] w-full">
-                <img
-                  className="w-[20px] h-[20px] mt-[5px]"
-                  src="/img/footer/facebook.png"
-                  alt=""
-                />
-                <p className="font-normal text-[20px] text-[#F8F8F7]">
-                  Facebook
-                </p>
-              </div>
-              <div className="flex items-center gap-[4px] w-full">
-                <p className="font-normal text-[16px] text-[#F8F8F7]">⬈</p>
-                <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">
-                  @bakong_nbc
-                </p>
-              </div>
-            </div>
-            <div className="w-[450px] h-[1px] bg-[#F8F8F74D]"></div>
-            {/* Telegram */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex gap-[12px] w-full">
-                <img
-                  className="w-[20px] h-[20px] mt-[5px]"
-                  src="/img/footer/telegram.png"
-                  alt=""
-                />
-                <p className="font-normal text-[20px] text-[#F8F8F7]">
-                  Telegram
-                </p>
-              </div>
-              <div className="flex items-center gap-[4px] w-full">
-                <p className="font-normal text-[16px] text-[#F8F8F7]">⬈</p>
-                <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">
-                  @bakong_nbc
-                </p>
-              </div>
-            </div>
-            <div className="w-[450px] h-[1px] bg-[#F8F8F74D]"></div>
-          </div>
+          <table className="w-full text-white [&_td]:p-[12px] [&_td]:py-[24px]">
+            <tbody>
+              {(footer?.contacts ??
+                [
+                  {
+                    icon: "/img/footer/call.png",
+                    type: "Phone number",
+                    icon_link: "/img/footer/plus.png",
+                    value: "+85523722563",
+                    isDefault: true,
+                  },
+                  {
+                    icon: "/img/footer/email.png",
+                    type: "Email",
+                    icon_link: "/img/footer/add.png",
+                    value: "support@bakong.gov.kh",
+                    isDefault: true,
+                  },
+                ]).map((item: any, index: number) => (
+                  <tr key={index} className="border-b border-[#F8F8F74D]">
+                    <td className="hidden sm:table-cell">
+                      <img
+                        className="w-[16px] h-[16px] mt-[5px]"
+                        src={
+                          item.isDefault
+                            ? item.icon
+                            : process.env.NEXT_PUBLIC_API_URL +
+                              "/assets/" +
+                              item.icon
+                        }
+                        alt=""
+                      />
+                    </td>
+                    <td>{item.type}</td>
+                    <td className="hidden sm:table-cell">
+                      <img
+                        src={
+                          item.isDefault
+                          ? item.icon_link
+                          : process.env.NEXT_PUBLIC_API_URL +
+                          "/assets/" +
+                          item.icon_link
+                        }
+                        alt=""
+                      />
+                    </td>
+                    <td className="text-right">{item?.value}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </div>
-        <div className="ml-auto">
-           <div className="ml-auto mr-[80px] w-[210px] h-[50px] bg-[#F8F8F7] flex flex-col justify-center">
-          <a href="#">
-            <p className="font-normal text-[16px] text-center">
-              Download Bakong App
+        <div className="w-full lg:w-[55%] flex flex-col lg:items-end">
+          <div className="md:w-[210px] h-[50px] bg-[#F8F8F7] flex flex-col justify-center">
+            <a href="#">
+              <p className="font-normal text-[16px] text-center">
+                Download Bakong App
+              </p>
+            </a>
+          </div>
+          <div className="flex flex-col pt-[50px] mt-auto">
+            <p className="font-normal text-[16px] text-[#F8F8F7] pb-[24px]">
+              {footer?.address ??
+                "Building #32, Preah Ang hanavong St. (240), Phnom Penh"}
             </p>
-          </a>
-          </div>
-          <div className="pr-[80px] pt-[460px]">
-            <p className="font-normal text-[16px] text-[#F8F8F7]">Building #32, Preah Ang <br /> Phanavong St. (240), Phnom Penh</p>
-            <div className="flex gap-50px pt-[28px]">
-              <p className="font-normal text-[20px] text-[#F8F8F7]">FAQ</p>
-              <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">⬈</p>
-            </div>
-            <div className="mt-[12px] w-[250px] h-[1px] bg-[#F8F8F74D]"></div>
-            <div className="flex pt-[20px]">
-              <p className="font-normal text-[20px] text-[#F8F8F7]">Legal Notices</p>
-              <p className="ml-auto font-normal text-[16px] text-[#F8F8F7]">⬈</p>
-            </div>
-            <div className="mt-[12px] w-[250px] h-[1px] bg-[#F8F8F74D]"></div>
-            <p className="font-normal text-[16px] text-[#F8F8F7] pt-[25px]">by National Bank of Cambodia</p>
+            <table className="text-white [&_td]:pb-[12px] [&_td]:py-[24px]">
+              <tbody>
+                <tr className="border-b border-[#F8F8F74D] ">
+                  <td>{footer?.FAQ ?? "FAQ"}</td>
+                  <td>⬈</td>
+                </tr>
+                <tr className="border-b border-[#F8F8F74D]">
+                  <td>{footer?.Legal_notices ?? "Legal Notices"}</td>
+                  <td>⬈</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="font-normal text-[16px] text-[#F8F8F7] pt-[25px]">
+              {footer?.copyright ?? "by National Bank of Cambodia"}
+            </p>
           </div>
         </div>
-       
       </div>
     </nav>
-  )
+  );
 }

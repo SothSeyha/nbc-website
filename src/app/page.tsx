@@ -49,7 +49,8 @@ export default function HomePage() {
         <div className="w-full flex flex-col items-center justify-center pt-[43px] ">
           <img
             src="/img/interbank-transfer/brand-view1.png"
-            className="w-full h-auto md:w-[60%] lg:w-[50%] aspect-[5/4] object-cover rounded-lg mt-[50px] md:mt-[90px]"
+            // className="w-full h-auto md:w-[60%] lg:w-[50%] aspect-[5/4] object-cover rounded-lg mt-[50px] md:mt-[90px]"
+            className="w-full h-auto md:w-[60%] aspect-[6.9/4] object-cover rounded-lg mt-[50px] md:mt-[90px]"
             alt=""
           />
         </div>
